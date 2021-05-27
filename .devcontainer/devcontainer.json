@@ -33,16 +33,16 @@
 		"jerrygoyal.shortcut-menu-bar",
 		"eg2.vscode-npm-script",
 		"ritwickdey.liveserver",
-		"wix.vscode-import-cost",
 		"github.vscode-pull-request-github",
-		"streetsidesoftware.code-spell-checker-portuguese-brazilian"
+		"streetsidesoftware.code-spell-checker-portuguese-brazilian",
+		"burkeholland.simple-react-snippets"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	 "postCreateCommand": "bash -i install-dev-tools.sh",
+	"postCreateCommand": "bash -i install-dev-tools.sh",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node"
