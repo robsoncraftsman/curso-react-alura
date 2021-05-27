@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ListaDeNotas from "./components/ListaDeNotas";
+import ListaNotas from "./components/ListaNotas";
 import FormularioCadastro from "./components/FormularioCadastro";
 
 class App extends Component {
@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <section>
         <FormularioCadastro />
-        <ListaDeNotas />
+        <ListaNotas />
       </section>
     );
   }
