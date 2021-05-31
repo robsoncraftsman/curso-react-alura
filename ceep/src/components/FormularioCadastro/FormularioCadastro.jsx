@@ -2,28 +2,39 @@ import React, { Component } from "react";
 import "./estilo.css";
 
 class FormularioCadastro extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.titulo = "";
     this.texto = "";
   }
 
-  handleMudancaTitulo(event) {
+  _handleMudancaTitulo(event) {
+    event.stopPropagation();
     this.titulo = event.target.value;
   }
 
-  handleMudancaTexto(event) {
+  _handleMudancaTexto(event) {
+    event.stopPropagation();
     this.texto = event.target.value;
+  }
+
+  _criarNota(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.props.criarNota(this.titulo, this.texto);
   }
 
   render() {
     return (
-      <form className="formulario-cadastro">
+      <form
+        className="formulario-cadastro"
+        onSubmit={this._criarNota.bind(this)}
+      >
         <p>
           <input
             type="text"
             placeholder="Título"
-            onChange={this.handleMudancaTitulo.bind(this)}
+            onChange={this._handleMudancaTitulo.bind(this)}
           />
         </p>
         <p>
@@ -31,7 +42,7 @@ class FormularioCadastro extends Component {
             cols="100"
             rows="5"
             placeholder="Escreva sua nota"
-            onChange={this.handleMudancaTexto.bind(this)}
+            onChange={this._handleMudancaTexto.bind(this)}
           />
         </p>
         <p>

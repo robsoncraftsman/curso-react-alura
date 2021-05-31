@@ -1,3 +1,7 @@
 .card-nota {
+  color: darkblue;
+}
+
+.card-nota header {
   color: blue;
 }

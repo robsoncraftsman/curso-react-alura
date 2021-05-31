@@ -16,6 +16,9 @@
 			"bash": {
 			  "path": "/bin/bash",
 			}
+		},
+		"workbench.colorCustomizations" : {
+			"terminal.foreground" : "#fafafa",
 		}
 	},
 
