@@ -1,7 +1,10 @@
-.card-nota {
+.card-nota * {
   color: darkblue;
+  display: inline;
+  padding: 0.5em;
+  vertical-align: middle;
 }
 
-.card-nota header {
+.card-nota h3 {
   color: blue;
 }
