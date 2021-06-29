@@ -12,6 +12,7 @@ class CardNota extends Component {
       <section className="card-nota">
         <h3>{this.props.titulo}</h3>
         <p>{this.props.texto}</p>
+        <p>{this.props.categoria}</p>
         <DeleteSVG onClick={this._excluirNota.bind(this)} />
       </section>
     );

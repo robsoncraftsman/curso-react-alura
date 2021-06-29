@@ -13,6 +13,7 @@ class ListaNotas extends Component {
                 excluirNota={this.props.excluirNota}
                 titulo={nota.titulo}
                 texto={nota.texto}
+                categoria={nota.categoria}
                 index={index}
               />
             </li>

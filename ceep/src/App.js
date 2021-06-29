@@ -8,18 +8,17 @@ class App extends Component {
     super();
     this.state = {
       notas: [],
-      categorias: ["Trabalho", "Esportes"],
+      categorias: ["", "Trabalho", "Esportes"],
     };
   }
 
-  _criarNota(titulo, texto) {
-    console.log(`Nova nota: ${titulo} - ${texto}`);
+  _criarNota(titulo, texto, categoria) {
+    console.log(`Nova nota: ${titulo} - ${texto} - ${categoria}`);
 
-    const nota = { titulo, texto };
+    const nota = { titulo, texto, categoria };
     const notas = this.state.notas;
     notas.push(nota);
     this.setState({ notas });
-    console.log(`Nota adicionada: ${nota}`);
     console.log(this.state);
   }
 
@@ -43,11 +42,14 @@ class App extends Component {
     return (
       <section>
         <section className="sessao-notas">
-          <FormularioCadastro criarNota={this._criarNota.bind(this)} />
+          <FormularioCadastro
+            categorias={this.state.categorias}
+            criarNota={this._criarNota.bind(this)}
+          />
           <section className="sessao-cadastro-notas">
             <ListaNotas
-              excluirNota={this._excluirNota.bind(this)}
               notas={this.state.notas}
+              excluirNota={this._excluirNota.bind(this)}
             />
           </section>
         </section>
