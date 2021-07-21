@@ -3,10 +3,29 @@ import CardNota from "../CardNota";
 import "./estilo.css";
 
 class ListaNotas extends Component {
+  constructor() {
+    super();
+    this.state = { notas: [] };
+    this._notasChange = this._notasChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.notas.subscribe(this._notasChange);
+  }
+
+  componentWillUnmount() {
+    this.props.notas.unsubscribe(this._notasChange);
+  }
+
+  _notasChange(notas) {
+    console.log(`Notas alteradas: ${notas}`);
+    this.setState({ ...this.state, notas });
+  }
+
   render() {
     return (
       <ul className="lista-notas">
-        {this.props.notas.map((nota, index) => {
+        {this.state.notas.map((nota, index) => {
           return (
             <li key={index}>
               <CardNota
