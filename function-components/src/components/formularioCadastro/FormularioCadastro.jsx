@@ -2,14 +2,24 @@ import React from "react";
 import { Button, TextField, Switch, FormControlLabel } from "@material-ui/core";
 
 function FormularioCadastro() {
+  let nome = "";
+
   return (
-    <form>
+    <form
+      onSubmit={(event) => {
+        console.log(nome);
+        event.preventDefault();
+      }}
+    >
       <TextField
         id="nome"
         label="Nome:"
         variant="outlined"
         fullWidth={true}
         margin="normal"
+        onChange={(event) => {
+          nome = event.target.value;
+        }}
       />
       <TextField
         id="sobrenome"
@@ -36,7 +46,7 @@ function FormularioCadastro() {
         control={<Switch name="novidades" color="primary" defaultChecked />}
       />
 
-      <Button color="primary" variant="contained">
+      <Button color="primary" variant="contained" type="submit">
         Cadastrar
       </Button>
     </form>
