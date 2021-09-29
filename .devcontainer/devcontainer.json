@@ -26,7 +26,6 @@
 	"extensions": [
 		"dbaeumer.vscode-eslint",
 		"naumovs.color-highlight",
-		"streetsidesoftware.code-spell-checker",
 		"eamodio.gitlens",
 		"christian-kohler.npm-intellisense",
 		"christian-kohler.path-intellisense",
@@ -37,7 +36,6 @@
 		"eg2.vscode-npm-script",
 		"ritwickdey.liveserver",
 		"github.vscode-pull-request-github",
-		"streetsidesoftware.code-spell-checker-portuguese-brazilian",
 		"burkeholland.simple-react-snippets"
 	],
 
