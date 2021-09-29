@@ -1,7 +1,6 @@
 #!/bin/bash
-nvm install 16.2.0
-nvm alias default 16.2.0
-nvm uninstall 16.0.0
-nvm list
-npm install -g npm@7.14.0
+nvm install v16.10.0
+nvm use v16.10.0
+nvm alias default v16.10.0
+npm install -g npm@7.24.1
 source ~/.bashrc
